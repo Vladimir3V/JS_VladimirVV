@@ -108,24 +108,56 @@ console.log(newReduce(array, fn));
 var array1 = [0, 1, 2, 3, 4, 5, 6];
 
 
+// function newSplice(anyArr, start, delCount) {
+	
+// 	var theArr = [],
+// 			 j = 0;
+			
+
+// 	if( delCount < 0) { delCount = 0; } 
+	
+// 	start = (start > 0) ? start : (anyArr.length + start);	
+	
+// 	for (let i = start; i < (start + delCount) && i < anyArr.length ; i++ ) {
+// 		theArr[j] = anyArr[i];
+// 		j++;
+// 	}
+// 	return theArr;
+	
+// }
+
 function newSplice(anyArr, start, delCount) {
 	
 	var theArr = [],
+		timArr = [],
 			 j = 0;
 			
 
 	if( delCount < 0) { delCount = 0; } 
-	
 	start = (start > 0) ? start : (anyArr.length + start);	
 	
 	for (let i = start; i < (start + delCount) && i < anyArr.length ; i++ ) {
 		theArr[j] = anyArr[i];
 		j++;
 	}
-	return theArr;
-	
+	j = 0;
+	for (let i = 0; i < anyArr.length; i++) {
+		if (i < start || i > (start + delCount) ) {
+			timArr[j] = anyArr [i];
+			j++;
+		} else {
+			for (var z = 3; z < arguments.length; z++) {
+				timArr[j] = arguments[z];
+				j++;
+			}
+				timArr[j] = (delCount>0) ? anyArr[i+2]:anyArr[i]; 
+			j++;
+			i = start + delCount;
+		}
+	}
+	anyArr = timArr; // Расскажи как добравться к оригинальному массиву?
+	return theArr;	
 }
-
 
 
 
