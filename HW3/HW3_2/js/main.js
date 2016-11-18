@@ -7,12 +7,15 @@ function isSimilarObj(objA, objB) {
 	function getVal(obj, prop) {
 		return (Object.getOwnPropertyDescriptor(obj, prop)).value;
 	}
+	
+	
+	if (Object.keys(objA).length !== Object.keys(objB).length) {
+		return false;
+	}
 
 	for (var i = 0; i < objArr.length; i++) {
 		var valA = getVal(objA,objArr[i]),
 			valB = getVal(objB,objArr[i]);
-		
-			console.log(valA,valB);
 				
 		if (valA === valB) {
 		} else if ((valA instanceof Date) && (valA - valB) !== 0) {
@@ -58,7 +61,7 @@ var objA = {
     },
 
     prop5: 1000,
-
+//
     prop6: new Date(2016, 2, 10)
 
 };
