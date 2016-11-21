@@ -1,8 +1,8 @@
-ДЗ - 2
+//ДЗ - 2
 function deleteTextNodes(arg1) {
 	var childs = arg1.childNodes;
 	
-	for (val of childs) {
+	for (var i = 0; i < childs.length; i++) {
 		if (childs[i].nodeType === 3) {
 			childs[i].parentElement.removeChild(childs[i]);
 		}
