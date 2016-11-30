@@ -1,0 +1,93 @@
+html {
+
+ 	width: 100%;
+ 	height: 100%;
+}
+
+body {
+
+ 	width: 100%;
+ 	height: 100%;
+}
+
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+ul {
+    margin-left: 0; /* Отступ слева в браузере IE и Opera */
+    padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+}
+
+
+.wrapper{
+/*    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    overflow: auto; */  
+}
+
+.maincontent{
+
+}
+
+.accordeon__item {
+	border-radius: 20px;
+	width: 460px;
+
+}
+.accordeon__inner-list{
+	display: none;
+	background-color: #e7e7e7;
+	padding-left: 22px;
+	margin-top: -20px;
+	padding-top: 34px;
+	padding-bottom: 18px;
+	-moz-border-radius: 0 0 20px 20px;
+    -webkit-border-radius: 0 0 20px 20px;
+	border-radius: 0 0 20px 20px;
+	
+}
+
+.active{
+	display: block;
+} 
+
+
+.accordeon_trigger {
+	position: relative;
+	background-color: #696666;
+	margin-top: 5px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px; 
+}
+
+.accordeon_trigger-text {
+	line-height: 40px;
+	color:#ffffff;
+	margin-left: 22px;
+}
+.accordeon__inner-link {
+	color: gray;
+}
+
+.whiteback {
+	background-color: #e7e7e7;
+}
+
+.orangecolor {
+	background-color: #ff8663;
+}
+
+.graytype {
+	color: #696666;
+} 
+
+.whytetype {
+	color: #ffffff;
+}
