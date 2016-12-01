@@ -118,7 +118,14 @@ function saveCookie(e) {
 })()
 
 refresh.addEventListener('click',() => {
+	window.location.reload();
 	document.cookie="=;expires=0";
+	console.log(11111);
+//    (function autoReload(){
+//		var goal = self.location;
+//		location.href = goal;
+//	})();
+	
 })
 
 
