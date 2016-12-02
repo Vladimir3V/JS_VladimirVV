@@ -23,13 +23,14 @@
 <div id="bodd">
 	<script id="entrytemplate" type="text/x-handlebars-template">
 	
-		{{#each title}}
 
 			<ul>
-				<li>{{cities}}</li>
+			  {{#each c}}
+				<li>{{this}}</li>
+			  {{/each}}
+
 			</ul>
 
-		{{/each}}
 	</script>
 </div>
 	
