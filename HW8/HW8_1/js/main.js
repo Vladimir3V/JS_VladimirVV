@@ -54,7 +54,7 @@ p.then(function (obj) {
 
 				for (let i = 0; i < cities.length; i++) {
 
-					if (cities[i].indexOf(key.trim()) === -1 && key) {
+					if (cities[i].indexOf(key.trim()) + 1 && key) {
 						c[j] = cities[i][0].toUpperCase() + cities[i].slice(1);
 						j++;
 					} else if (key === " ") {
