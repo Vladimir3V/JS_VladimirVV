@@ -32,28 +32,41 @@ new Promise(function (resolve) {
 				var a = response;
 				a = a.response;
 
-				a.sort( (a, b) => {
-					var f = a.bdate?a.bdate.split('.'):[0,0];
-					var s = b.bdate?b.bdate.split('.'):[0,0];	
+				a.sort((a, b) => {
+					var f = a.bdate ? a.bdate.split('.') : [0, 0];
+					var s = b.bdate ? b.bdate.split('.') : [0, 0];
 
-					if (f[0] < 10){ f[0] = '0' + f[0]}
-					if (s[0] < 10){ s[0] = '0' + s[0]}
-						
+					if (f[0] < 10) {
+						f[0] = '0' + f[0]
+					}
+					if (s[0] < 10) {
+						s[0] = '0' + s[0]
+					}
+
 					return ((f[1] + f[0]) - (s[1] + s[0]));
 				});
-					
-					
-					
-				resolve();
+
+				console.log(a);
+
+
+				(() => {
+					var source = entrytemplate.innerHTML;
+					var templateFn = Handlebars.compile(source);
+
+					var context = templateFn({
+						list: a
+					});
+					main.innerHTML = context;
+				})();
 			}
+
+
+			resolve();
+
 		});
 	})
 }).catch(function (e) {
 	alert(`Ошибка: ${e.message}`);
 });
-
-
-
-
 
 
