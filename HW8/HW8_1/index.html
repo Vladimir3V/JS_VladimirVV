@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="viewport" content="width=1195">
+	<title>accordeon</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src='js/handlebars-v4.0.5.js'></script> 
+
+	
+</head>
+<body  >
+	<!--[if lt IE 8]>
+		отобразится если ие меньше чем восьмая версия
+	<![endif]-->
+	
+	<div class="wrapper" id="wrap">
+		<form action="#" id="form">
+			<input type="text" id="input">
+		</form>
+<div id="bodd">
+	<script id="entrytemplate" type="text/x-handlebars-template">
+	
+
+			<ul>
+			  {{#each c}}
+				<li>{{this}}</li>
+			  {{/each}}
+
+			</ul>
+
+	</script>
+</div>
+	
+
+<script language="JavaScript" type="text/javascript" src='js/main.js'></script>
+
+</body>
+</html>
+
