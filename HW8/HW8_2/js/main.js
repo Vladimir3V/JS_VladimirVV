@@ -35,19 +35,46 @@ new Promise(function (resolve) {
 				a.sort((a, b) => {
 					var f = a.bdate ? a.bdate.split('.') : [0, 0];
 					var s = b.bdate ? b.bdate.split('.') : [0, 0];
-
+					
+					var start = new Date(),
+							day = start.getDate();
+					
+					if (day < 10) {
+						day = '0' + day;
+					}
+					
+					now = Number(start.getMonth()+1) + "" + day;					
+					
 					if (f[0] < 10) {
-						f[0] = '0' + f[0]
+						f[0] = '0' + f[0];
 					}
 					if (s[0] < 10) {
-						s[0] = '0' + s[0]
+						s[0] = '0' + s[0];
 					}
-
-					return ((f[1] + f[0]) - (s[1] + s[0]));
+					
+					
+					var a =  Number(f[1] + f[0]);
+					var b =  Number(s[1] + s[0]);
+					
+					if (a === 0 && b === 0 ) {
+						return 1
+					} else if (a === 0 && b > 0) {
+						return 1
+					} else if (b === 0 && a > 0) {
+						return -1
+					} else if (a >= now && b >= now) {
+						if (a > b){return -1} 
+						if (a < b){return 1}
+					} else if (a < now && b > now) {
+						return 1;
+					} else if (a > +now && b < +now) {
+						return -1;
+					} else if ( a < now && b < now) {
+						if (a > b){return 1} 
+						if (a < b){return -1}
+					}
+				
 				});
-
-				console.log(a);
-
 
 				(() => {
 					var source = entrytemplate.innerHTML;
@@ -59,10 +86,7 @@ new Promise(function (resolve) {
 					main.innerHTML = context;
 				})();
 			}
-
-
 			resolve();
-
 		});
 	})
 }).catch(function (e) {
