@@ -12,18 +12,16 @@
 	<link rel="stylesheet" href="css/main.css">
 
 	<!--	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
-	
-<!--
-	<script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
+
+		<script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
 	<script src='js/handlebars-v4.0.5.js'></script>
--->
 
 
 
 </head>
 
-<body>
-	<wrapper class="wrapper">
+<body id="body">
+	<wrapper class="wrapper" id="wrapper">
 
 
 		<div id="main" class="container">
@@ -54,627 +52,46 @@
 
 						<div id="yourFriendsList">
 							<ul id="yourFriendsItems">
-
-
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c638824/v638824604/36ce/CwQk8GsLYEs.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Nikolai Gavshin</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c309626/u152501835/e_9cde0a4f.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Roman Gavrilov</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c405328/v405328370/8cd8/XwQlvkuPdVU.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Александра Митрошина</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-<!--
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c633317/v633317109/32c11/pLaBjt-uEIo.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Александра Шаманина</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c623418/v623418956/dd0c/4t3tKAofsKM.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Алексей Нечаев</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c626326/v626326432/2d76e/4tQIkqEWr7o.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Алексей Петухов</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c421916/v421916481/78a3/1bOFM143bo0.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Алексей Тимош</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c636523/v636523084/37d5d/z_-62MnB21E.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Альян Алиев</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c627816/v627816554/3e336/bY3PAG5wvdw.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Анастасия Газизова</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c637723/v637723042/10121/Mll3fzWOPxw.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Арина Ахрамеева</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c636017/v636017711/38f31/fIqALQvHGx8.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Влад Торопчин</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c623622/v623622107/4782a/pwINHFqvnJI.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Владимир Писанный</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c631430/v631430876/51120/3qLE7oMlGgk.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Владимир Сабанцев</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c618318/v618318682/1b8be/5EcTwHviN34.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Денис Пермяков</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c638223/v638223607/10232/Y-sRPCFErgI.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Дима Женин</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c637417/v637417276/195b9/RP3ypFna9fk.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Дмитрий Ковальчук</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c403420/u3674745/e_72c8136f.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Дмитрий Лысиченков</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c4675/u1440076/e_c0f2bfdf.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Дмитрий Митрошин</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c636622/v636622069/201d9/xCTirLVReWQ.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Дмитрий Родионов</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c629514/v629514963/2e847/vYGfYmQqku4.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Евгений Хайдуков</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c636022/v636022403/2f19b/Rj5DTAlAwdk.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Ефим Русинов</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c630222/v630222123/7e14a/VlMJtu3nf4c.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Женя Малышкина</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c631728/v631728387/43f72/tVFTvNiAz1U.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Зар Захаров</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c636424/v636424784/1212c/HUecMtknBlQ.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Игорь Захаров</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c633326/v633326016/e133/XaZIlpwvoAo.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Игорь Твердохлеб</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c636322/v636322828/30f6c/vCKxUP4LS08.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Ильнар Хакимов</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c618320/v618320929/2c3c/oChqbPRPd8o.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Илюха Чубаров</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c4107/v4107000/10/dNfOEwBThZE.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Ирина Герасименко</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c636431/v636431938/26396/LBxiDKGsOMI.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Макс Палкин</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c626719/v626719697/23c1c/QPNQUjQxDY4.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Михаил Еманов</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c9450/u4495788/e_32fd8e06.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Наталья Карабатова</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c626822/v626822173/17af9/4JyRTqZDVqs.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Наталья Неклюдова</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c604321/v604321541/32313/j7sKxj53XTs.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Николай Чернобаев</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c622521/v622521616/521ba/tivElMFo3gw.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Олег Бурылов</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c626328/v626328183/2cddd/zwsYkqcjAVU.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Олег Трофименко</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c604418/v604418049/3807c/P0V8Y6Hy0yU.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Оля Кошелева</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c626929/v626929046/373c6/KMilJxtcMaQ.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Света Копеина</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c633725/v633725213/31d01/dCcklL2_eZc.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Светочка Бурылова</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c636216/v636216452/2c8ae/iOV9dGth_W4.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Сергей Мелюков</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c636116/v636116828/1755/cpaCCHUKlyU.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Сергей Рубец</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c417526/v417526866/8a42/7deC2hoG6dU.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Танюша Лысиченкова</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
--->
-
-		
+								<li class="listItem">
+									<div id="friendInfo" class="friendInfo">
+										<div id="friendPhoto">
+											<img src="https://pp.vk.me/c638824/v638824604/36ce/CwQk8GsLYEs.jpg" alt="" class="friendPhoto">
+										</div>
+										<div id="friendName" class="friendName">
+											<span class="name">Nikolai Gavshin</span>
+										</div>
+										<div id="addPic" class="addPic">
+											<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
+										</div>
+									</div>
+								</li>
+								<li class="listItem">
+									<div id="friendInfo" class="friendInfo">
+										<div id="friendPhoto">
+											<img src="https://pp.vk.me/c309626/u152501835/e_9cde0a4f.jpg" alt="" class="friendPhoto">
+										</div>
+										<div id="friendName" class="friendName">
+											<span class="name">Roman Gavrilov</span>
+										</div>
+										<div id="addPic" class="addPic">
+											<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
+										</div>
+									</div>
+								</li>
+
+								<li class="listItem">
+									<div id="friendInfo" class="friendInfo">
+										<div id="friendPhoto">
+											<img src="https://pp.vk.me/c405328/v405328370/8cd8/XwQlvkuPdVU.jpg" alt="" class="friendPhoto">
+										</div>
+										<div id="friendName" class="friendName">
+											<span class="name">Александра Митрошина</span>
+										</div>
+										<div id="addPic" class="addPic">
+											<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
+										</div>
+									</div>
+								</li>
 
 							</ul>
 						</div>
@@ -689,51 +106,47 @@
 
 						<div id="chosenFriendsList">
 							<ul id="chosenFriendsItems">
-									<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c638824/v638824604/36ce/CwQk8GsLYEs.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Nikolai Gavshin</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
+								<li class="listItem active">
+									<div id="friendInfo" class="friendInfo">
+										<div id="friendPhoto">
+											<img src="https://pp.vk.me/c638824/v638824604/36ce/CwQk8GsLYEs.jpg" alt="" class="friendPhoto">
+										</div>
+										<div id="friendName" class="friendName">
+											<span class="name">Nikolai Gavshin</span>
+										</div>
+										<div id="addPic" class="addPic">
+											<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
+										</div>
+									</div>
+								</li>
+								<li class="listItem">
+									<div id="friendInfo" class="friendInfo">
+										<div id="friendPhoto">
+											<img src="https://pp.vk.me/c309626/u152501835/e_9cde0a4f.jpg" alt="" class="friendPhoto">
+										</div>
+										<div id="friendName" class="friendName">
+											<span class="name">Roman Gavrilov</span>
+										</div>
+										<div id="addPic" class="addPic">
+											<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
+										</div>
+									</div>
+								</li>
 
-				</div>
+								<li class="listItem">
+									<div id="friendInfo" class="friendInfo">
+										<div id="friendPhoto">
+											<img src="https://pp.vk.me/c405328/v405328370/8cd8/XwQlvkuPdVU.jpg" alt="" class="friendPhoto">
+										</div>
+										<div id="friendName" class="friendName">
+											<span class="name">Александра Митрошина</span>
+										</div>
+										<div id="addPic" class="addPic">
+											<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
+										</div>
+									</div>
+								</li>
 
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c309626/u152501835/e_9cde0a4f.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Roman Gavrilov</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
-			<li class="listItem">
-				<div id="friendInfo" class="friendInfo">
-					<div id="friendPhoto">
-						<img src="https://pp.vk.me/c405328/v405328370/8cd8/XwQlvkuPdVU.jpg" alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>Александра Митрошина</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
-
-				</div>
-
-			</li>
 							</ul>
 						</div>
 					</div>
@@ -752,24 +165,40 @@
 
 
 	<script id="entrytemplate" type="text/x-handlebars-template">
-			{{#each list}}
-			<li class='listItem'>
-				<div id="friendInfo" class="friendInfo">
-					<div id=friendPhoto>
-						<img src={{photo_50}} alt="" class="friendPhoto">
-					</div>
-					<div id="friendName" class="friendName">
-						<span>{{first_name}} {{last_name}}</span>
-					</div>
-					<div id="addPic" class="addPic">
-						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
-					</div>
+		{{#each list}}
+		<li class='listItem'>
+			<div id="friendInfo" class="friendInfo">
+				<div id=friendPhoto>
+					<img src={{photo_50}} alt="" class="friendPhoto">
 				</div>
-			</li>
-			{{/each}}
+				<div id="friendName" class="friendName">
+					<span class="name">{{first_name}} {{last_name}}</span>
+				</div>
+				<div id="addPic" class="addPic">
+					<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
+				</div>
+			</div>
+		</li>
+		{{/each}}
 	</script>
 
-
+<script id="entrytemplate2" type="text/x-handlebars-template">
+		{{#each list}}
+		<li class='listItem active'>
+			<div id="friendInfo" class="friendInfo">
+				<div id=friendPhoto>
+					<img src={{photo_50}} alt="" class="friendPhoto">
+				</div>
+				<div id="friendName" class="friendName">
+					<span class="name">{{first_name}} {{last_name}}</span>
+				</div>
+				<div id="addPic" class="addPic">
+					<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQg2OBTuHXgvA1mH8xm3-iAFBKZkwfbiqpFjao2UF3WQyi-hGvMqIQc9A" alt="" class="picture">
+				</div>
+			</div>
+		</li>
+		{{/each}}
+	</script>
 
 
 	<script language="JavaScript" type="text/javascript" src='js/main.js'></script>
