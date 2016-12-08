@@ -63,8 +63,8 @@ new Promise(function (resolve) {
 					} else if (b === 0 && a > 0) {
 						return -1
 					} else if (a >= now && b >= now) {
-						if (a > b){return -1} 
-						if (a < b){return 1}
+						if (a > b){return 1} 
+						if (a < b){return -1}
 					} else if (a < now && b > now) {
 						return 1;
 					} else if (a > +now && b < +now) {
