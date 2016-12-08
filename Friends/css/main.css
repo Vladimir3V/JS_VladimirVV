@@ -1,28 +1,29 @@
 html {
-
- 	width: 100%;
- 	height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 body {
-
- 	width: 100%;
- 	height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 li {
-    list-style-type: none; /* Убираем маркеры */
+	list-style-type: none;
+	/* Убираем маркеры */
 }
+
 ul {
-    margin-left: 0; /* Отступ слева в браузере IE и Opera */
-    padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
-	  margin: 0;
+	margin-left: 0;
+	/* Отступ слева в браузере IE и Opera */
+	padding-left: 0;
+	/* Отступ слева в браузере Firefox, Safari, Chrome */
+	margin: 0;
 }
-
-
 
 .container {
 	min-height: 600px;
+	min-width: 630px;
 	width: 100%;
 	height: 100%;
 	position: fixed;
@@ -38,18 +39,23 @@ ul {
 	background: #f18371;
 	display: block;
 	border: none;
-	width: 640px;
+	width: 620px;
 	height: 510px;
-	border-radius: 10px;	
+	border-radius: 10px;
+	overflow: hidden;
+	border: 1px solid #ffffff;
 }
 
 .wHeader {
 	height: 45px;
+		font-size: 14px;
+
 }
 
 .wHeadText {
 	padding: 20px;
 	line-height: 45px;
+	color: #ffffff;
 }
 
 .wSearch {
@@ -69,30 +75,35 @@ ul {
 .friendSearch {
 	float: left;
 	display: inline-block;
-
-	margin-left: 14px;
-	margin-right: 28px;
+	margin-left: 15px;
+	margin-right: 18px;
 }
 
 .friendSearch2 {
 	display: inline-block;
 }
 
-input[type="text"] {
-  background-repeat: no-repeat;
-	border: 1px solid #cccccc; 
-	
-   border-radius: 14px; 
-   -webkit-border-radius: 14px; 
-   -moz-border-radius: 14px; 
-   -khtml-border-radius: 14px; 
-   background: #ffffff !important; 
-   outline: none; 
-   height: 28px; 
-   width: 290px; 
-   color: #cccccc; 
-   font-size: 11px; 
-   font-family: Tahoma; 
+input {
+	background-image: url(../img/loop.png);
+	background-repeat: no-repeat;
+	/*Убираем повтор изображения*/
+	background-position: 4px;
+	/*Позиционируем*/
+	outline: none;
+	/*убираем стандартную обводку браузера*/
+	-moz-border-radius: 13px;
+	/*закругляем углы для Mozilla*/
+	-webkit-border-radius: 13px;
+	/*закругляем углы для Chrome, Safari*/
+	border-radius: 13px;
+	/*закругляем углы для остальных браузеров*/
+	padding-left: 24px;
+	/*отступ слева от ввода, чтобы текст не был на картинке(выбирать по размеру картинки)*/
+	height: 28px;
+	width: 265px;
+	color: #cccccc;
+	font-size: 11px;
+	border: 1px solid #ffffff;
 }
 
 .friendsList {
@@ -100,42 +111,39 @@ input[type="text"] {
 	background: white;
 }
 
-
-
 .yourfriends {
-	width: 320px;
+	width: 279px;
 	height: 365px;
 	float: left;
-	border-right: 1px solid black;
+	border-right: 1px solid #f1f0f1;
 	overflow: auto;
-	
+	margin-left: 16px;
+	padding-right: 16px;
+}
+
+.headText {
+	display: inline-block;
+	margin-top: 12px;
+	font-size: 14px;
 }
 
 .chosenFriends {
-	height: 365px;
 	float: right;
-	width: 318px;
-		overflow: auto;
-
-
+	margin-left: 10px;
 }
 
 .friendsHeader {
-	height: 45px;
-	border-bottom: 1px solid black;
+	height: 32px;
+	border-bottom: 1px solid #f1f0f1;
 }
 
 .yFriendsItem {
-		height: 45px;
-	border-bottom: 1px solid black;
-		border-top: 1px solid black;
-
+	height: 45px;
 }
-
 
 .saveButton {
 	float: right;
-	line-height: 50px;
+	margin-top: 15px;
 	margin-right: 10px;
 }
 
@@ -145,32 +153,55 @@ input[type="text"] {
 }
 
 .friendInfo {
-		line-height: 50px;
-		height: 50px;
+	line-height: 50px;
+	height: 50px;
+	border-top: 1px solid #f1f0f1;
+}
+
+.friendInfo:hover {
+	background: #e8e5e5;
 }
 
 .friendPhoto {
 	width: 40px;
-	height: 40px;	
+	height: 40px;
 	float: left;
 	border-radius: 20px;
 	margin-right: 10px;
+	margin-top: 5px;
 }
+
 .friendName {
 	display: inline-block;
 }
 
+.friendName {
+	font-size: 12px;
+}
+
 .addPic {
 	display: inline-block;
-			float: right;
-			width: 40px;
-	height: 40px;	
+	float: right;
+	width: 20px;
+	height: 20px;
+	margin-top: 5px;
 }
 
 .picture {
+	opacity: 0.5;
+}
 
-			width: 40px;
-	height: 40px;	
+.picture:hover {
+	opacity: 1;
+}
+
+.picture2 {
+	-moz-transform: rotate(45deg);
+	/* Firefox */
+	-o-transform: rotate(45deg);
+	/* Opera */
+	-webkit-transform: rotate(45deg);
+	/* Safari y Chrome */
 }
 
 .active {
@@ -179,4 +210,37 @@ input[type="text"] {
 
 .action {
 	display: none;
+}
+
+.cleanButton {
+	position: absolute;
+	display: block;
+	margin-top: 10px;
+}
+
+.cB {
+	opacity: 0.1;
+	border: 1px solid #ffffff;
+}
+
+.cB:hover {
+	opacity: 0.5;
+}
+
+.sB {
+	background: #f18371;
+	height: 30px;
+	width: 87px;
+	color: #ffffff;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	font-size: 10px;
+	border: 1px solid #ffffff;
+}
+
+button, 
+button:active, 
+button:focus {
+    outline: none;
 }
