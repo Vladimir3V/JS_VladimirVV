@@ -1,0 +1,34 @@
+html {
+
+ 	width: 100%;
+ 	height: 100%;
+}
+
+body {
+
+ 	width: 100%;
+ 	height: 100%;
+}
+
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+ul {
+    margin-left: 0; /* Отступ слева в браузере IE и Opera */
+    padding-left: 0; /* Отступ слева в браузере Firefox, Safari, Chrome */
+}
+
+
+.listItem {
+	height: 50px;
+	width: 300px;
+	margin-top: 10px;
+}
+
+.text {
+	float: right;
+}
+
+.picture {
+	float: left;
+}

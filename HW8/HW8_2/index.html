@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
+	<script src='js/handlebars-v4.0.5.js'></script>
+
+
+</head>
+
+<body>
+	<div id="main" class="container">
+
+
+
+		
+
+
+
+		
+
+	</div>
+
+	<script id="entrytemplate" type="text/x-handlebars-template">
+		<ul id="listIt">
+	
+			{{#each list}} 
+				<li class='listItem'>
+			
+			<span class="text">{{first_name}} {{last_name}} {{bdate}}</span>
+
+		<img src=" {{photo_50}} " class="picture"> 
+		
+		</li>
+		{{/each}}
+		
+		</ul>
+		
+		
+		
+		
+		
+	</script>
+
+
+
+	<script language="JavaScript" type="text/javascript" src='js/main.js'></script>
+
+</body>
+
+</html>
+
+
