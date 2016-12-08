@@ -1,92 +1,86 @@
-// Проверяем что в localStorage. 
-// Если там есть нужные нам элмененты то выгружаем их
-// Если нет то переходим дальше
+// Тут подключаемся к VK.SDK
 
-if (
-	localStorage.getItem('chosFr') != null || 
-	localStorage.getItem('yourFr') != null
-) {
-	chosenFriendsItems.innerHTML = localStorage.getItem('chosFr');
-	yourFriendsItems.innerHTML = localStorage.getItem('yourFr');
-	let yourFr = yourFriendsItems.getElementsByTagName('LI');
-	let chosFr = chosenFriendsItems.getElementsByTagName('LI');
-	
-	for (let i = 0; i < yourFr.length; i++) {
-		yourFr[i].classList.remove('action');
+new Promise(function (resolve) {
+	if (document.readyState == 'complete') {
+		resolve();
+	} else {
+		window.onload = resolve;
 	}
-	
-	for (let i = 0; i < chosFr.length; i++) {
-		chosFr[i].classList.remove('action');
-	}
-
-} else {
-	
-	// Тут подключаемся к VK.SDK
-	
-	new Promise(function (resolve) {
-		if (document.readyState == 'complete') {
-			resolve();
-		} else {
-			window.onload = resolve;
-		}
-	}).then(function () {
-		return new Promise(function (resolve, reject) {
-			VK.init({
-				apiId: 5758824
-			});
-
-			VK.Auth.login(function (response) {
-				if (response.session) {
-					resolve(response);
-				} else {
-					reject(new Error('Не удалось авторизоваться'));
-				}
-			}, 2);
+}).then(function () {
+	return new Promise(function (resolve, reject) {
+		VK.init({
+			apiId: 5758824
 		});
-	}).then(function () {
-		
-		// Тут получаем данные нужные для дальнейшей работы
-		
-		return new Promise(function (resolve, reject) {
-			VK.api('friends.get', {
-				'order': 'name',
-				'fields': 'bdate,photo_50'
-			}, response => {
 
-
-				if (response.error) {
-					reject(new Error(response.error.error_msg));
-				} else {
-
-					var a = response;
-					a = a.response;
-					
-					// Создаем шаблоны heandleBars и заполнем конетнтом страницу
-					// Создаю 2 шаблона потому что ч одним шаблоном не красиво получается
-
-					(() => {
-						var source = entrytemplate.innerHTML;
-						var templateFn = Handlebars.compile(source);
-						var context = templateFn({
-							list: a
-						});
-
-						yourFriendsItems.innerHTML = context;
-
-						var source = entrytemplate2.innerHTML;
-						var templateFn = Handlebars.compile(source);
-						var context = templateFn({
-							list: a
-						});
-						chosenFriendsItems.innerHTML = context;
-					})();
-				}
-			});
-		});
-	}).catch(function (e) {
-		alert(`Ошибка: ${e.message}`);
+		VK.Auth.login(function (response) {
+			if (response.session) {
+				resolve(response);
+			} else {
+				reject(new Error('Не удалось авторизоваться'));
+			}
+		}, 2);
 	});
-}
+}).then(function () {
+
+	// Тут получаем данные нужные для дальнейшей работы
+
+	return new Promise(function (resolve, reject) {
+		VK.api('friends.get', {
+			'order': 'name',
+			'fields': 'bdate,photo_50'
+		}, response => {
+
+
+			if (response.error) {
+				reject(new Error(response.error.error_msg));
+			} else {
+
+				var a = response;
+				a = a.response;
+
+				// Создаем шаблоны heandleBars и заполнем конетнтом страницу
+				// Создаю 2 шаблона потому что ч одним шаблоном не красиво получается
+
+				(() => {
+					var source = entrytemplate.innerHTML;
+					var templateFn = Handlebars.compile(source);
+					var context = templateFn({
+						list: a
+					});
+
+					yourFriendsItems.innerHTML = context;
+
+					var source = entrytemplate2.innerHTML;
+					var templateFn = Handlebars.compile(source);
+					var context = templateFn({
+						list: a
+					});
+					chosenFriendsItems.innerHTML = context;
+					
+
+					if (sessionStorage.getItem('chosFr') != null) {
+						var names = JSON.parse(sessionStorage.getItem('chosFr'));
+						let listF = yourFriendsItems.getElementsByTagName('LI');
+						let listC = chosenFriendsItems.getElementsByTagName('LI');
+
+						for (let val of names) {
+							for (let i = 0; i < listF.length; i++) {	
+								if (val == listC[i].getElementsByClassName('name')[0].innerHTML) {
+									listC[i].classList.remove('active');
+									listF[i].classList.add('active');
+								}
+							}
+						}
+					}
+
+				})();
+			}
+		});
+	});
+}).catch(function (e) {
+	alert(`Ошибка: ${e.message}`);
+});
+
 
 // ПРоверяем что пользователь вносит в input
 
@@ -95,9 +89,9 @@ wSearch.addEventListener('input', sort);
 function sort(e) {
 	var fList = [],
 		key;
-	
+
 	// Отслеживаем в какой input вносятся даные
-	
+
 	if (
 		e.target.parentElement.parentElement.getAttribute('id') == 'yourFriendSearch'
 	) {
@@ -113,7 +107,7 @@ function sort(e) {
 	}
 
 	// Эта функция навешивает класс с display: none на элементы которые не удовлетворяют условию
-	
+
 	function showEl(key) {
 		var c;
 		for (var i = 0; i < fList.length; i++) {
@@ -145,7 +139,7 @@ function pickAndDrop(e) {
 	if (target.getAttribute('id') != 'friendInfo') return;
 
 	//создаем клон элемента по которому нажали
-	
+
 	newElem = target.cloneNode(true);
 
 	newElem.style.position = 'absolute';
@@ -156,11 +150,11 @@ function pickAndDrop(e) {
 	newElem.style.opacity = '0.8';
 	newElem.style.background = '#e8e5e5';
 
-  // И добаляем его на старницу
+	// И добаляем его на старницу
 	body.appendChild(newElem);
 
 
-  // Отслеживаем его перемещение
+	// Отслеживаем его перемещение
 	document.addEventListener('mousemove', moveElement);
 
 	x = newElem.offsetLeft;
@@ -172,19 +166,19 @@ function pickAndDrop(e) {
 		newElem.style.top = `${y-(start[1]-mXY[1])}px`;
 
 		// и отслеживем его перемещение
-		
+
 		newElem.addEventListener('mouseup', stop);
 
 		function stop(event) {
 			var pap = target.parentNode.parentNode.getAttribute('id'),
 				text = target.getElementsByTagName('span')[0].innerHTML,
 				fItems;
-			
+
 			// Отслеживаем попала ли мышка с элементом в границы блока
 			// Если да то зеркальный элемент становится видимым, а исходный невидимым
 			// созданй элемент удаляется 
 			// Если мы переместили элемент не туда, то он просто исчезнет
-			
+
 			if (pap == 'chosenFriendsItems') {
 				if (
 					event.clientX > yourFriends.offsetLeft &&
@@ -234,13 +228,13 @@ function addRemove(e) {
 		text,
 		fItems;
 	//Проверяем что нажали по картинке
-	
+
 	if (e.target.getAttribute('id') != 'pict') {
 
 		return
 	}
 	var pop = target.parentNode.parentNode.parentNode.parentNode.getAttribute('id');
-	
+
 	// Проверяем с какой стороны нажали
 	// И исходя из этого скрывам ондин элемент по которому нажали
 	// и открываем зеркальный
@@ -278,11 +272,16 @@ function saveData(ev) {
 	ev.target.style.opacity = '0.7';
 	setTimeout(() => ev.target.style.opacity = '1', 100);
 
-	var yourFr = yourFriendsItems.innerHTML;
-	var chosFr = chosenFriendsItems.innerHTML;
-	localStorage.setItem("yourFr", yourFr);
-	localStorage.setItem("chosFr", chosFr);
+	var saveList = [];
+	var chosFr = chosenFriendsItems.getElementsByTagName('LI');
+	for (let clas of chosFr) {
+		if (clas.classList[1] != 'active') {
+			saveList.push( clas.getElementsByClassName('name')[0].innerHTML);
+		}
+	}
 
+
+	sessionStorage.setItem("chosFr", JSON.stringify(saveList));
 }
 
 //Пасхальная кнопка, очистить localstorage
@@ -290,6 +289,6 @@ function saveData(ev) {
 cleanButton.addEventListener('click', cleanData);
 
 function cleanData() {
-	localStorage.clear();
+	sessionStorage.clear();
 
 }
