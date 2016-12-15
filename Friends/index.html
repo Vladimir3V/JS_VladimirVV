@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+
+
+	<script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
+	<script src='js/handlebars-v4.0.5.js'></script>
+
+
+
+</head>
+
+<body id="body">
+	<wrapper class="wrapper" id="wrapper">
+
+
+		<div id="main" class="container">
+			<div id="window" class="window">
+				<div id="wHeader" class="wHeader">
+					<span class="wHeadText">Выберите друзей</span>
+				</div>
+
+
+				<div id="wSearch" class="wSearch">
+					<div id="yourFriendSearch" class="friendSearch">
+						<form action="">
+							<input type="text" placeholder="Начните вводить имя друга">
+						</form>
+					</div>
+					<div id="chosenFriendSearch" class="friendSearch2">
+						<form action="">
+							<input type="text" placeholder="Начните вводить имя друга">
+						</form>
+					</div>
+				</div>
+
+				<div id="friendsList" class="friendsList">
+					<div id="yourFriends" class="yourfriends">
+						<div id="friendsHeader" class="friendsHeader">
+							<span class="headText">Ваши друзья</span>
+						</div>
+
+						<div id="yourFriendsList">
+							<ul id="yourFriendsItems">
+
+							</ul>
+						</div>
+
+					</div>
+
+
+					<div id="chosenFriends" class="yourfriends chosenFriends">
+						<div id="friendsHeader" class="friendsHeader">
+							<span class="headText">Друзья в списке</span>
+						</div>
+
+						<div id="chosenFriendsList">
+							<ul id="chosenFriendsItems">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+
+
+				<div id="wFooter" class="wFooter">
+					<div id="saveButton" class="saveButton">
+						<button class="sB">Cохранить</button>
+					</div>
+				</div>
+				<div id="cleanButton" class="cleanButton">
+					<button class="cB">Очистить Sessionstorage</button>
+				</div>
+			</div>
+
+
+		</div>
+
+	</wrapper>
+
+
+	<script id="entrytemplate" type="text/x-handlebars-template">
+		{{#each list}}
+		<li class='listItem'>
+			<div id="friendInfo" class="friendInfo">
+				<div id=friendPhoto>
+					<img src={{photo_50}} alt="" class="friendPhoto">
+				</div>
+				<div id="friendName" class="friendName">
+					<span class="name">{{first_name}} {{last_name}}</span>
+				</div>
+				<div id="addPic" class="addPic">
+					<img src="img/add.png" id="pict" class="picture">
+				</div>
+			</div>
+		</li>
+		{{/each}}
+	</script>
+
+	<script id="entrytemplate2" type="text/x-handlebars-template">
+		{{#each list}}
+		<li class='listItem active'>
+			<div id="friendInfo" class="friendInfo">
+				<div id=friendPhoto>
+					<img src={{photo_50}} alt="" class="friendPhoto">
+				</div>
+				<div id="friendName" class="friendName">
+					<span class="name">{{first_name}} {{last_name}}</span>
+				</div>
+				<div id="addPic" class="addPic">
+					<img src="img/add.png" class="picture2 picture" id="pict">
+				</div>
+			</div>
+		</li>
+		{{/each}}
+	</script>
+
+
+	<script language="JavaScript" type="text/javascript" src='js/main.js'></script>
+
+</body>
+
+</html>
+

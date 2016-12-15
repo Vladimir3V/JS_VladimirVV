@@ -54,7 +54,7 @@ ul {
 }
 
 .active{
-	display: block;
+	display: none;
 } 
 
 
