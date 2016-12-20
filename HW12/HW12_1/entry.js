@@ -1,7 +1,3 @@
-
-
-
-	
 Handlebars.registerHelper('formatTime', function(time) {
     var minutes = parseInt(time / 60),
         seconds = time - minutes * 60;
@@ -22,7 +18,7 @@ new Promise(function(resolve) {
     return intro.Model.login(5267932, 2 | 8 | 8192);
 }).then(function() {
     return intro.Model.getUser().then(function(users) {
-        header.innerHTML = View.render('header', users[0]);
+        header.innerHTML = intro.View.render('header', users[0]);
     });
 }).catch(function(e) {
     console.error(e);

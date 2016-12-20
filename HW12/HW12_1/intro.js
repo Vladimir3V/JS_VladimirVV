@@ -5,7 +5,7 @@ var Router     = require('./router.js');
 var View	   = require('./view.js');
 
 
-exports.Controller = Controller;
-exports.Model = Model;
-exports.Router = Router;
-exports.View = View;
+exports.Controller = Controller();
+exports.Model = Model();
+exports.Router = Router();
+exports.View = View();

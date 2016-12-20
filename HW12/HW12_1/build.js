@@ -52,10 +52,10 @@ var intro =
 	var View	   = __webpack_require__(4);
 
 
-	exports.Controller = Controller;
-	exports.Model = Model;
-	exports.Router = Router;
-	exports.View = View;
+	exports.Controller = Controller();
+	exports.Model = Model();
+	exports.Router = Router();
+	exports.View = View();
 
 /***/ },
 /* 1 */
