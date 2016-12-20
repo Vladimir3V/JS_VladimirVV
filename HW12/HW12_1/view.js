@@ -1,5 +1,6 @@
-module.exports = () => {
-	let View = {
+var View = require('./view.js');
+
+module.exports = {
 		render: function (templateName, model) {
 			templateName = templateName + 'Template';
 
@@ -9,8 +10,5 @@ module.exports = () => {
 
 			return renderFn(model);
 		}
-	};
 	
-	return View;
-
 }

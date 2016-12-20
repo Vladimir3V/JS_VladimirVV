@@ -1,6 +1,8 @@
-module.exports = () => {
+var Model = require('./model.js');
+var View  = require('./view');
 
-	let Controller = {
+
+module.exports = {
 		musicRoute: function () {
 			return Model.getMusic().then(function (music) {
 				results.innerHTML = View.render('music', {
@@ -22,7 +24,4 @@ module.exports = () => {
 				});
 			});
 		}
-	};
-	
-	return Controller;
 }

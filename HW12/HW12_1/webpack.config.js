@@ -1,7 +1,7 @@
 module.exports = {
-    entry: "./intro",
+    entry: "./entry",
     output: {
         filename: "build.js",
-		library: "intro"
+		library: "entry"
     }
 }

@@ -1,6 +1,8 @@
-module.exports = () => {
+var Model = require('./model.js');
 
-	let Model = {
+module.exports = {
+
+
 		login: function (appId, perms) {
 			return new Promise(function (resolve, reject) {
 				VK.init({
@@ -44,8 +46,5 @@ module.exports = () => {
 				count: 20
 			});
 		}
-	};
-	
-	return Model;
 
 }

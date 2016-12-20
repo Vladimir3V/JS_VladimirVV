@@ -1,4 +1,4 @@
-var intro =
+var entry =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -45,59 +45,89 @@ var intro =
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
 	var Controller = __webpack_require__(1);
 	var Model 	   = __webpack_require__(2);
-	var Router     = __webpack_require__(3);
-	var View	   = __webpack_require__(4);
+	var Router     = __webpack_require__(4);
+	var View	   = __webpack_require__(3);
 
 
-	exports.Controller = Controller();
-	exports.Model = Model();
-	exports.Router = Router();
-	exports.View = View();
+	exports.Controller = Controller;
+	exports.Model = Model;
+	exports.Router = Router;
+	exports.View = View;
+
+	Handlebars.registerHelper('formatTime', function(time) {
+	    var minutes = parseInt(time / 60),
+	        seconds = time - minutes * 60;
+
+	    minutes = minutes.toString().length === 1 ? '0' + minutes : minutes;
+	    seconds = seconds.toString().length === 1 ? '0' + seconds : seconds;
+
+	    return minutes + ':' + seconds;
+	});
+
+	Handlebars.registerHelper('formatDate', function(ts) {
+	    return new Date(ts * 1000).toLocaleString();
+	});
+
+	new Promise(function(resolve) {
+	    window.onload = resolve;
+	}).then(function() {
+	    return Model.login(5267932, 2 | 8 | 8192);
+	}).then(function() {
+	    return Model.getUser().then(function(users) {
+	        header.innerHTML = View.render('header', users[0]);
+	    });
+	}).catch(function(e) {
+	    console.error(e);
+	    alert('Ошибка: ' + e.message);
+	});
+
+
+
 
 /***/ },
 /* 1 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = () => {
+	var Model = __webpack_require__(2);
+	var View  = __webpack_require__(3);
 
-		let Controller = {
+
+	module.exports = {
 			musicRoute: function () {
-				return intro.Model.getMusic().then(function (music) {
-					results.innerHTML = intro.View.render('music', {
+				return Model.getMusic().then(function (music) {
+					results.innerHTML = View.render('music', {
 						list: music
 					});
 				});
 			},
 			friendsRoute: function () {
-				return intro.Model.getFriends().then(function (friends) {
-					results.innerHTML = intro.View.render('friends', {
+				return Model.getFriends().then(function (friends) {
+					results.innerHTML = View.render('friends', {
 						list: friends
 					});
 				});
 			},
 			newsRoute: function () {
-				return intro.Model.getNews().then(function (news) {
-					results.innerHTML = intro.View.render('news', {
+				return Model.getNews().then(function (news) {
+					results.innerHTML = View.render('news', {
 						list: news.items
 					});
 				});
 			}
-		};
-		
-		return Controller;
 	}
 
 
 /***/ },
 /* 2 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = () => {
+	var Model = __webpack_require__(2);
 
-		let Model = {
+	module.exports = {
+
+
 			login: function (appId, perms) {
 				return new Promise(function (resolve, reject) {
 					VK.init({
@@ -141,36 +171,16 @@ var intro =
 					count: 20
 				});
 			}
-		};
-		
-		return Model;
 
 	}
 
 /***/ },
 /* 3 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = () => {
-		let Router = {
-			handle: function (route) {
-				var routeName = route + 'Route';
+	var View = __webpack_require__(3);
 
-				intro.Controller[routeName]();
-			}
-		};
-		
-		return Router;
-
-
-	}
-
-/***/ },
-/* 4 */
-/***/ function(module, exports) {
-
-	module.exports = () => {
-		let View = {
+	module.exports = {
 			render: function (templateName, model) {
 				templateName = templateName + 'Template';
 
@@ -180,12 +190,24 @@ var intro =
 
 				return renderFn(model);
 			}
-		};
 		
-		return View;
-
 	}
 
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Controller = __webpack_require__(1);
+
+	module.exports = {
+
+			handle: function (route) {
+				var routeName = route + 'Route';
+
+				Controller[routeName]();
+			}
+	}
 
 /***/ }
 /******/ ]);
