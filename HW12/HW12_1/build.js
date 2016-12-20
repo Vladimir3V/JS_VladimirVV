@@ -65,22 +65,22 @@ var intro =
 
 		let Controller = {
 			musicRoute: function () {
-				return Model.getMusic().then(function (music) {
-					results.innerHTML = View.render('music', {
+				return intro.Model.getMusic().then(function (music) {
+					results.innerHTML = intro.View.render('music', {
 						list: music
 					});
 				});
 			},
 			friendsRoute: function () {
-				return Model.getFriends().then(function (friends) {
-					results.innerHTML = View.render('friends', {
+				return intro.Model.getFriends().then(function (friends) {
+					results.innerHTML = intro.View.render('friends', {
 						list: friends
 					});
 				});
 			},
 			newsRoute: function () {
-				return Model.getNews().then(function (news) {
-					results.innerHTML = View.render('news', {
+				return intro.Model.getNews().then(function (news) {
+					results.innerHTML = intro.View.render('news', {
 						list: news.items
 					});
 				});
@@ -156,7 +156,7 @@ var intro =
 			handle: function (route) {
 				var routeName = route + 'Route';
 
-				Controller[routeName]();
+				intro.Controller[routeName]();
 			}
 		};
 		
