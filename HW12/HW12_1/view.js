@@ -1,4 +1,3 @@
-var View = require('./view.js');
 
 module.exports = {
 		render: function (templateName, model) {

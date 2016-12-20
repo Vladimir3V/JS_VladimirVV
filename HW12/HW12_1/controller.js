@@ -1,7 +1,6 @@
 var Model = require('./model.js');
 var View  = require('./view');
 
-
 module.exports = {
 		musicRoute: function () {
 			return Model.getMusic().then(function (music) {
