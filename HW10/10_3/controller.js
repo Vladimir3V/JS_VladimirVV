@@ -67,17 +67,13 @@ var Controller = {
 							
 						}
 				}
-								
-				console.log (photos);
 
 				results.innerHTML = View.render('photosPro', {
 					list: photos
 				});
 			});
 		});
-	},
-	
-	
+	},	
 
 };
 
