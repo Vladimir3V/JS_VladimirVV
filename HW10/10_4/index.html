@@ -28,9 +28,7 @@
 			<button type="button" class="btn btn-default" onclick="Router.handle('photos')">Фото ДЗ_2 </button>
 			<button type="button" class="btn btn-default" onclick="Router.handle('photosPro')">Фото и Коменты ДЗ_3 </button>
 			<button type="button" class="btn btn-default" onclick="Router.handle('photosAlbum')">Фото по Альбомам ДЗ_4 </button>
-
-
-
+			<button type="button" class="btn btn-default" onclick="Router.handle('photosAF')"> Фото по Альбомам c фильтрами ДЗ_5 </button>
 		</div>
 		<hr>
 		<div id="results"></div>
@@ -189,6 +187,58 @@
 
 		</div>
 	</script>
+	
+	
+	
+	<script type="text/x-handlebars-template" id="photosAFTemplate">
+		
+			
+		<div id="">
+				
+			
+					
+<!--			  <div> {{title}} </div>-->
+			  	<select onchange="Router.handle('this.value')">
+				<option value="likes">Кол-во лайков</option>
+				<option value="reposts">Кол-во репостов</option>
+				<option value="commnts">Кол-во коментов</option>
+				<option value="date">Дате добавлления</option>
+			</select>
+			  
+			  
+				  {{#each list }}
+
+					<div class="text-left">
+							<img src="{{src_small}}" class="">
+							<div>Лайки: {{likes.count}}</div>
+							<div>Репосты: {{reposts.count}}</div>
+							<div>Комменатрии кол-во: {{com.count}}</div>
+							<div>Комментарии:</div>
+
+							{{#if com.details}} 
+
+								{{#com.details}}
+
+									<div>{{this}}</div>
+
+								{{/com.details}} 
+
+							{{else}}
+
+								<div>Коментариев нет</div>
+
+							{{/if}}
+
+
+						</div>
+
+
+				  {{/each }}
+				  
+		</div>
+			
+	</script>
+
 
 </body>
 

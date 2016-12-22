@@ -115,7 +115,60 @@ var Controller = {
 			})
 
 		});
+	},
+	
+	photosAFRoute: function () {
+		
+		Model.getAlbums().then(function (albums) {
+			Model.getComments().then(function (comments) {
+
+				for (let alId of albums) {
+
+					alId['photos'] = {};
+					
+					Model.getPhotosFromAlbum(alId.aid).then(function (photos) {
+						alId.photos['ph'] = [];
+
+						var j = 0;
+						for (let id of photos) {
+
+							id['com'] = {
+								count: 0,
+								details: []
+							};
+
+							for (var pid of comments)
+								if (pid.pid == id.pid) {
+
+									var i = id.com.count++;
+									id.com.details[i] = pid.message;
+								}
+							alId.photos.ph[j] = id;
+							j++;
+						}
+						
+						results.innerHTML = View.render('photosAF', {
+					list: photos
+				});
+
+					});
+				}
+
+
+//				results.innerHTML = View.render('photosAF', {
+//					list: photos
+//				});
+
+			})
+
+		});
+		
+	
+		
 	}
+	
+	
+	
 };
 
 
