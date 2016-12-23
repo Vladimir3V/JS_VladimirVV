@@ -120,13 +120,16 @@
 						<div>Комменатрии кол-во: {{com.count}}</div>
 						<div>Комментарии:</div>
 
-						{{#if com.details}} 
-
-							{{#com.details}}
-
-								<div>{{this}}</div>
-
-							{{/com.details}} 
+						{{#if com.count}}
+						
+							{{#com.items}}
+							
+								<img src="{{photo}}" class="">
+								<div>{{name}}</div>
+								<div>- {{text}}</div>
+									
+								
+							{{/com.items}} 
 						
 						{{else}}
 

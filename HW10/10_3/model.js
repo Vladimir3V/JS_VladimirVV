@@ -46,8 +46,10 @@ var Model = {
 		extended: 1
 	})
    	},
-	getComments: function () { 
-	    return this.callApi('photos.getAllComments', {});  				
+	getComments: function (photoId) {
+		return this.callApi('photos.getComments', {photo_id: photoId, extended: 1, fields: 'photo_50', v:5.60 });		
    	}
+	
+	
 	
 };
