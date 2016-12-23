@@ -26,9 +26,9 @@
 			<button type="button" class="btn btn-default" onclick="Router.handle('news')">Новости</button>
 			<button type="button" class="btn btn-default" onclick="Router.handle('groups')">Группы ДЗ_1 </button>
 			<button type="button" class="btn btn-default" onclick="Router.handle('photos')">Фото ДЗ_2 </button>
-			<button type="button" class="btn btn-default" onclick="Router.handle('photosPro')">Фото и Коменты ДЗ_3 </button>
-			<button type="button" class="btn btn-default" onclick="Router.handle('photosAlbum')">Фото по Альбомам ДЗ_4 </button>
-			<button type="button" class="btn btn-default" onclick="Router.handle('photosAF')"> Фото по Альбомам c фильтрами ДЗ_5 </button>
+			<button type="button" class="btn btn-default" onclick="Router.handle('photosPro')">Фото PRO ДЗ_4 </button>
+
+
 		</div>
 		<hr>
 		<div id="results"></div>
@@ -44,7 +44,6 @@
 		<h1>Данные из VK-аккаунта: {{first_name}} {{last_name}}</h1>
 	</script>
 
-<!--
 	<script type="text/x-handlebars-template" id="musicTemplate">
 		<ul class="list-group" id="audioList">
 			{{#each list}}
@@ -59,9 +58,7 @@
 			{{/each}}
 		</ul>
 	</script>
--->
 
-<!--
 	<script type="text/x-handlebars-template" id="friendsTemplate">
 		<div id="friendsList">
 			{{#each list}}
@@ -110,13 +107,15 @@
 			{{/if}} {{/each}}
 		</div>
 	</script>
--->
 
 	<script type="text/x-handlebars-template" id="photosProTemplate">
-		<div id="">
+		<div id="photosProList">
 			{{#each list}} 
-				{{#if @index}}
-
+			
+			<h2> {{title}}</h2>
+			
+				{{#if photos}}
+					{{#photos}}
 					<div class="text-left">
 						<img src="{{src_small}}" class="">
 						<div>Лайки: {{likes.count}}</div>
@@ -124,13 +123,16 @@
 						<div>Комменатрии кол-во: {{com.count}}</div>
 						<div>Комментарии:</div>
 
-						{{#if com.details}} 
-
-							{{#com.details}}
-
-								<div>{{this}}</div>
-
-							{{/com.details}} 
+						{{#if com.count}}
+						
+							{{#com.items}}
+							
+								<img src="{{photo}}" class="">
+								<div>{{name}}</div>
+								<div>- {{text}}</div>
+									
+								
+							{{/com.items}} 
 						
 						{{else}}
 
@@ -140,105 +142,16 @@
 
 
 					</div>
-
+				 	{{/photos}}
+				{{else}}
+			 	
+			 	<div> Фотографий нет</div>
+				 	
 				{{/if}} 
 			{{/each}}
 
 		</div>
 	</script>
-	
-		<script type="text/x-handlebars-template" id="photosAlbumTemplate">
-		
-		<div id="">
-			{{#each list}}
-				
-			  <div> {{title}} </div>
-			  
-				  {{#each photos.ph }}
-
-					<div class="text-left">
-							<img src="{{src_small}}" class="">
-							<div>Лайки: {{likes.count}}</div>
-							<div>Репосты: {{reposts.count}}</div>
-							<div>Комменатрии кол-во: {{com.count}}</div>
-							<div>Комментарии:</div>
-
-							{{#if com.details}} 
-
-								{{#com.details}}
-
-									<div>{{this}}</div>
-
-								{{/com.details}} 
-
-							{{else}}
-
-								<div>Коментариев нет</div>
-
-							{{/if}}
-
-
-						</div>
-
-
-				  {{/each }}
-				  
-			{{/each}}
-
-		</div>
-	</script>
-	
-	
-	
-	<script type="text/x-handlebars-template" id="photosAFTemplate">
-		
-			
-		<div id="">
-				
-			
-					
-<!--			  <div> {{title}} </div>-->
-			  	<select onchange="Router.handle('this.value')">
-				<option value="likes">Кол-во лайков</option>
-				<option value="reposts">Кол-во репостов</option>
-				<option value="commnts">Кол-во коментов</option>
-				<option value="date">Дате добавлления</option>
-			</select>
-			  
-			  
-				  {{#each list }}
-
-					<div class="text-left">
-							<img src="{{src_small}}" class="">
-							<div>Лайки: {{likes.count}}</div>
-							<div>Репосты: {{reposts.count}}</div>
-							<div>Комменатрии кол-во: {{com.count}}</div>
-							<div>Комментарии:</div>
-
-							{{#if com.details}} 
-
-								{{#com.details}}
-
-									<div>{{this}}</div>
-
-								{{/com.details}} 
-
-							{{else}}
-
-								<div>Коментариев нет</div>
-
-							{{/if}}
-
-
-						</div>
-
-
-				  {{/each }}
-				  
-		</div>
-			
-	</script>
-
 
 </body>
 

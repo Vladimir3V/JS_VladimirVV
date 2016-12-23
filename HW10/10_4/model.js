@@ -37,23 +37,23 @@ var Model = {
     getNews: function() {
         return this.callApi('newsfeed.get', { filters: 'post', count: 20 });
     },
-    getGroups: function() {
+    getGroups: function () {
    		return this.callApi('groups.get', { extended: 1, fields: 'name, photo_100' });
    	},
-   	getPhotos: function() { 
+   	getPhotos: function () { 
 			
-		return this.callApi('photos.getAll', {
-			extended: 1
-		})
+	return this.callApi('photos.getAll', {
+		extended: 1
+	})
    	},
-	getComments: function() { 
-	    return this.callApi('photos.getAllComments', {});  				
+	getComments: function (photoId) {
+		return this.callApi('photos.getComments', {photo_id: photoId, extended: 1, fields: 'photo_50', v:5.60 });		
    	},
-	getAlbums: function() {
-		return this.callApi('photos.getAlbums',{need_system:1});	
-	},
-	getPhotosFromAlbum: function(albumId) {
-		return this.callApi('photos.get', {album_id: albumId })
+	
+	getAlbum: function() {
+		return this.callApi('photos.getAlbums', {need_system: 1});
 	}
+	
+	
 	
 };
