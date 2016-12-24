@@ -14,8 +14,12 @@
 			margin: 15px;
 		}
 		
-		.active {
+		.view {
 			display: none;
+		}
+		
+		.active {
+			display: block;
 		}
 	</style>
 </head>
@@ -113,150 +117,153 @@
 	</script>
 
 	<script type="text/x-handlebars-template" id="photosProTemplate">
-		<div id="photosProList">
-			{{#each list}} 
-			
-			
-			<h2> {{title}}</h2>
-			
-			
-			
-			
-				{{#if photos.likes}}
-				
-				<select onchange="Router.handle('this.value')">
+	<div id="photosProList">
+		{{#each list}}
+
+			<h2> {{title}}</h2> 
+
+			{{#if photos.likes}}
+
+				<select onchange="Router.active(this.value, {{@index}})">
 					<option value="likes">Кол-во лайков</option>
 					<option value="reposts">Кол-во репостов</option>
-					<option value="commnts">Кол-во коментов</option>
+					<option value="coments">Кол-во коментов</option>
 					<option value="date">Дате добавлления</option>
 				</select>
-					<div class="list"> 
-					{{#photos.likes}}
-					<div class="text-left ">
-						<img src="{{src_small}}" class="">
-						<div>Лайки: {{likes.count}}</div>
-						<div>Репосты: {{reposts.count}}</div>
-						<div>Комменатрии кол-во: {{com.count}}</div>
-						<div>Комментарии:</div>
 
-						{{#if com.count}}
-						
-							{{#com.items}}
+
+				<div class="list" id="{{@index}}">
+					<div class="view likes active">
+
+						{{#photos.likes}}
+						<div class="text-left ">
+							<img src="{{src_small}}" class="">
+							<div>Лайки: {{likes.count}}</div>
+							<div>Репосты: {{reposts.count}}</div>
+							<div>Комменатрии кол-во: {{com.count}}</div>
+							<div>Комментарии:</div>
+
+							{{#if com.count}} 
+
+								{{#com.items}}
+
+									<img src="{{photo}}" class="">
+									<div>{{name}}</div>
+									<div>- {{text}}</div>
+
+
+								{{/com.items}} 
+
+							{{else}}
+
+								<div>Коментариев нет</div>
+
+							{{/if}}
+
+						</div>
+						{{/photos.likes}} 
+					</div>
+					
+					<div class="view date">
+
+						{{#photos.date}}
+						<div class="text-left ">
+							<img src="{{src_small}}" class="">
+							<div>Лайки: {{likes.count}}</div>
+							<div>Репосты: {{reposts.count}}</div>
+							<div>Комменатрии кол-во: {{com.count}}</div>
+							<div>Комментарии:</div>
+
+							{{#if com.count}} 
+
+								{{#com.items}}
+
+									<img src="{{photo}}" class="">
+									<div>{{name}}</div>
+									<div>- {{text}}</div>
+
+								{{/com.items}} 
+
+							{{else}}
+
+								<div>Коментариев нет</div>
+
+							{{/if}}
+
+						</div>
+						{{/photos.date}} 
+					</div>
+					
+
+					<div class="view coments">
 							
-								<img src="{{photo}}" class="">
-								<div>{{name}}</div>
-								<div>- {{text}}</div>
-									
-								
-							{{/com.items}} 
-						
-						{{else}}
+						{{#photos.coments}}
+						<div class="text-left ">
+							<img src="{{src_small}}" class="">
+							<div>Лайки: {{likes.count}}</div>
+							<div>Репосты: {{reposts.count}}</div>
+							<div>Комменатрии кол-во: {{com.count}}</div>
+							<div>Комментарии:</div>
 
-							<div>Коментариев нет</div>
+							{{#if com.count}} 
 
-						{{/if}}
+								{{#com.items}}
+
+									<img src="{{photo}}" class="">
+									<div>{{name}}</div>
+									<div>- {{text}}</div>
 
 
+								{{/com.items}} 
+
+							{{else}}
+
+								<div>Коментариев нет</div>
+
+							{{/if}}
+
+
+						</div>
+						{{/photos.coments}} 
 					</div>
-				 	{{/photos.likes}}
-				 	
-					
-					
-					
-					
-					</div>
-					
-						<div class="list active"> 
-					{{#photos.reposts}}
-					<div class="text-left ">
-						<img src="{{src_small}}" class="">
-						<div>Лайки: {{likes.count}}</div>
-						<div>Репосты: {{reposts.count}}</div>
-						<div>Комменатрии кол-во: {{com.count}}</div>
-						<div>Комментарии:</div>
 
-						{{#if com.count}}
-						
-							{{#com.items}}
-							
-								<img src="{{photo}}" class="">
-								<div>{{name}}</div>
-								<div>- {{text}}</div>
-									
-								
-							{{/com.items}} 
-						
-						{{else}}
+					<div class=" view reposts">		
+						{{#photos.reposts}}
+							<div class="text-left ">
+								<img src="{{src_small}}" class="">
+								<div>Лайки: {{likes.count}}</div>
+								<div>Репосты: {{reposts.count}}</div>
+								<div>Комменатрии кол-во: {{com.count}}</div>
+								<div>Комментарии:</div>
 
-							<div>Коментариев нет</div>
+								{{#if com.count}} 
 
-						{{/if}}
+									{{#com.items}}
+										<img src="{{photo}}" class="">
+										<div>{{name}}</div>
+										<div>- {{text}}</div>
 
+									{{/com.items}} 
 
-					</div>
-				 	{{/photos.reposts}}
-				 	
-					
-					
-					
-					
-					</div>
-					
-							<div class="list active"> 
-					{{#photos.coments}}
-					<div class="text-left ">
-						<img src="{{src_small}}" class="">
-						<div>Лайки: {{likes.count}}</div>
-						<div>Репосты: {{reposts.count}}</div>
-						<div>Комменатрии кол-во: {{com.count}}</div>
-						<div>Комментарии:</div>
+								{{else}}
+									<div>Коментариев нет</div>
+								{{/if}}
 
-						{{#if com.count}}
-						
-							{{#com.items}}
-							
-								<img src="{{photo}}" class="">
-								<div>{{name}}</div>
-								<div>- {{text}}</div>
-									
-								
-							{{/com.items}} 
-						
-						{{else}}
-
-							<div>Коментариев нет</div>
-
-						{{/if}}
-
-
-					</div>
-				 	{{/photos.coments}}
-				 	
-					
-					
-					
-					
-					</div>
-				 	
-				{{else}}
-			 	
-			 	<div> Фотографий нет</div>
-				 	
-				{{/if}} 
-				
-				
-				
-				
-				
-				
-				
-				
-			{{/each}}
+							</div>
+						{{/photos.reposts}}
+					</div>	
+				</div>
 			
-			
+			{{else}}
+				<div> Фотографий нет</div>
+			{{/if}} 
 
-		</div>
-	</script>
+		{{/each}}
+
+
+
+	</div>
+</script>
 
 </body>
 

@@ -42,16 +42,24 @@ var Model = {
    	},
    	getPhotos: function () { 
 			
-	return this.callApi('photos.getAll', {
-		extended: 1
-	})
+		return this.callApi('photos.getAll', { extended: 1})
    	},
+	
+	getPhoto: function (user,photo) {
+
+		return this.callApi('photos.getById',{photos:`${user}_${photo} `, v:5.60});
+	},
+	
 	getComments: function (photoId) {
 		return this.callApi('photos.getComments', {photo_id: photoId, extended: 1, fields: 'photo_50', v:5.60 });		
    	},
 	
 	getAlbum: function() {
 		return this.callApi('photos.getAlbums', {need_system: 1});
+	},
+	
+	getElements: function(id) {
+		return document.getElementById(id);
 	}
 	
 	
